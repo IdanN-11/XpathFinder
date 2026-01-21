@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI XPath Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        textarea,
+        input {
+            width: 100%;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            padding: 10px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        pre {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 15px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>🧠 AI XPath Finder & Validator</h2>
+
+    <form method="post" action="/generate">
+
+        <label>Website URL:</label><br>
+        <input type="text" name="url" style="width:90%"><br><br>
+
+        <label>HTML Document:</label><br>
+        <textarea name="html_doc" rows="10" style="width:90%"></textarea><br><br>
+
+        <label>Prompt:</label><br>
+        <textarea name="prompt" rows="4" style="width:90%"></textarea><br><br>
+
+        <label>Extra Context (optional):</label><br>
+        <textarea name="extra_context" rows="3" style="width:90%"></textarea><br><br>
+
+        <button type="submit">Generate XPath</button>
+    </form>
+
+
+    {% if result %}
+    <h3>✅ Result</h3>
+    <pre>{{ result }}</pre>
+    {% endif %}
+
+</body>
+
+</html>
